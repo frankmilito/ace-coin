@@ -1,0 +1,111 @@
+.paymentInfo img {
+  max-width: 100%;
+  width: 30px;
+}
+
+.paymentInfo .content {
+  border-bottom: 2px dashed #ccc;
+}
+
+.paymentInfo {
+  background-color: #e8ecef;
+  padding: 1em 2em;
+  border-radius: 10px;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  /* min-width: 400px; */
+  /* background-color: red; */
+  overflow: hidden;
+}
+
+.paymentInfo .content .details {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0;
+}
+.paymentInfo .content .details h3 {
+  font-size: 1em;
+  font-weight: 600;
+}
+.paymentInfo .details p {
+  font-size: 1em;
+  color: #949db1;
+}
+.paymentInfo .leftcircle,
+.paymentInfo .rightcircle {
+  position: absolute;
+  width: 30px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+}
+.paymentInfo .leftcircle {
+  left: -5%;
+  bottom: 16%;
+}
+.paymentInfo .rightcircle {
+  /* right: 2%; */
+  bottom: 16%;
+  right: -5%;
+}
+
+.paymentInfo .summary .title {
+  font-size: 1em;
+  color: #949db1;
+  padding: 0.5em 0;
+}
+.paymentInfo .summary .amount {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.paymentInfo .summary .amount small {
+  font-weight: 400;
+  font-size: 0.6em;
+  padding: 0 3px;
+}
+.paymentWrapper .paymentInfo .summary .amount small:nth-child(2) {
+  font-weight: 400;
+  font-size: 0.6em;
+  color: #7a7d83;
+}
+
+/* mobile screens with max widths of 600px */
+@media only screen and (max-width: 600px) {
+  .paymentInfo {
+    padding-top: 5em;
+    position: relative;
+    min-width: 100%;
+  }
+  .paymentInfo .content .details h3 {
+    font-size: 0.8em;
+  }
+  .paymentInfo .details p {
+    font-size: 0.8em;
+  }
+  .paymentInfo .leftcircle,
+  .paymentInfo .rightcircle {
+    width: 30px;
+    height: 35px;
+  }
+  .paymentInfo .leftcircle {
+    left: -5%;
+    bottom: 20%;
+  }
+  .paymentInfo .rightcircle {
+    /* right: 2%; */
+    bottom: 20%;
+    right: -5%;
+  }
+
+  .paymentInfo .summary .title {
+    font-size: 0.8em;
+  }
+  .paymentInfo .summary .amount {
+    font-size: 1.3em;
+  }
+}

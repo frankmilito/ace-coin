@@ -1,4 +1,4 @@
-import classes from "../styles/payment.module.css";
+import classes from "../styles/paymentInfo.module.css";
 import scroll from "../assets/ancient-scroll.png";
 
 const PaymentInfo = () => {
