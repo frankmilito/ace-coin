@@ -6,6 +6,7 @@
   font-family: "Montserrat";
   color: #1a2f6c;
   position: relative;
+  animation: myAnim 1s ease 0s 1 normal backwards;
 }
 .paymentWrapper {
   display: flex;
@@ -380,6 +381,17 @@
   font-size: 1em;
 }
 
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* mobile screens with max widths of 600px */
 @media only screen and (max-width: 600px) {
   .paymentContainer {
