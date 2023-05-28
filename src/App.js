@@ -10,7 +10,7 @@ function App() {
         <Payment handleOpen={() => setIsOpen(false)} />
       ) : (
         <button className={"btn"} onClick={() => setIsOpen(true)}>
-          Retry Payment
+          Complete Payment
         </button>
       )}
     </div>

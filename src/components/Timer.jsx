@@ -25,7 +25,7 @@ const Timer = ({ handleOpen }) => {
   return (
     <>
       <Countdown
-        date={Date.now() + 50000}
+        date={Date.now() + 100000}
         renderer={renderer}
         zeroPadTime={3}
       />
