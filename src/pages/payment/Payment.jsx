@@ -2,13 +2,12 @@ import { useState } from "react";
 import classes from "../../styles/payment.module.css";
 import logo from "../../assets/bank-card.png";
 import edit from "../../assets/edit_icon.svg";
-import master_card_logo from "../../assets/mastercard_logo.svg";
 import dotted from "../../assets/dots.svg";
-import chipset from "../../assets/chip.png";
-import wifi_img from "../../assets/wifi.png";
-import scroll from "../../assets/ancient-scroll.png";
 import MasterCard from "../../components/MasterCard";
 import CardInput from "../../components/CardInput";
+import Timer from "../../components/Timer";
+import CardDetails from "../../components/CardDetails";
+import PaymentInfo from "../../components/PaymentInfo";
 
 const Payment = () => {
   const [expiryMonth, setExpiryMonth] = useState("09");
@@ -27,13 +26,7 @@ const Payment = () => {
               <h2>AceCoin</h2>
               <h2 className={classes.subtitle}>Pay</h2>
             </div>
-            <div className={classes.timer}>
-              <p className={classes.squareBackground}>0</p>
-              <p className={classes.squareBackground}>1</p>
-              <p className={classes.squareBackground}>:</p>
-              <p className={classes.squareBackground}>1</p>
-              <p className={classes.squareBackground}>9</p>
-            </div>
+            <Timer />
           </div>
           <div className={classes.card_details}>
             <div className={classes.card_number}>
@@ -101,66 +94,8 @@ const Payment = () => {
         <section className={classes.rightContainer}>
           <div className={classes.mainWrapper}>
             <div className={classes.blueDiv}></div>
-            <div className={classes.hoverContainer}>
-              <div className={classes.mastercard_container}>
-                <div className={classes.imageDiv}>
-                  <img src={chipset} alt="chipset" />
-                  <img src={wifi_img} alt="wifi" />
-                </div>
-                <div className={classes.content}>
-                  <p className={classes.name}>Jonathan Michael</p>
-                  <div className={classes.card_no}>
-                    <p className={classes.dots}>.....</p> <p>3456</p>
-                  </div>
-                  <div className={classes.card_dets}>
-                    <p>09/22</p>
-                    <img src={master_card_logo} alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.paymentInfo}>
-              <div style={{ width: "100%" }}>
-                <div className={classes.content}>
-                  <div className={classes.details}>
-                    <p>Company</p>
-                    <h3>Apple</h3>
-                  </div>
-                  <div className={classes.details}>
-                    <p>Order Number</p>
-                    <h3>1266201</h3>
-                  </div>
-                  <div className={classes.details}>
-                    <p>Product</p>
-                    <h3>Macbook Air</h3>
-                  </div>
-                  <div className={classes.details}>
-                    <p>VAT (20%)</p>
-                    <h3>$100.00</h3>
-                  </div>
-                  <br />
-                </div>
-                <div className={classes.summary}>
-                  <div className={classes.leftcircle}></div>
-                  <div className={classes.rightcircle}></div>
-                  <br />
-                  <p className={classes.title}>You have to pay</p>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <p className={classes.amount}>
-                      549.<small>99</small>
-                      <small>USD</small>
-                    </p>
-                    <img src={scroll} alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <CardDetails />
+            <PaymentInfo />
           </div>
         </section>
       </div>
