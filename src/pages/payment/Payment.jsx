@@ -7,6 +7,7 @@ import verified from "../../assets/verified_icon.svg";
 import dotted from "../../assets/dots.svg";
 import chipset from "../../assets/chip.png";
 import wifi_img from "../../assets/wifi.png";
+import scroll from "../../assets/ancient-scroll.png";
 const Payment = () => {
   return (
     <main className={classes.paymentContainer}>
@@ -70,7 +71,7 @@ const Payment = () => {
                 <input
                   type="text"
                   className={classes.input}
-                  placeholder="0000 - 1111 - 2222 - 3333"
+                  placeholder="003"
                 />
                 <img src={dotted} alt="" />
               </div>
@@ -128,6 +129,48 @@ const Payment = () => {
                   <div className={classes.card_dets}>
                     <p>09/22</p>
                     <img src={master_card_logo} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={classes.paymentInfo}>
+              <div style={{ width: "100%" }}>
+                <div className={classes.content}>
+                  <div className={classes.details}>
+                    <p>Company</p>
+                    <h3>Apple</h3>
+                  </div>
+                  <div className={classes.details}>
+                    <p>Order Number</p>
+                    <h3>1266201</h3>
+                  </div>
+                  <div className={classes.details}>
+                    <p>Product</p>
+                    <h3>Macbook Air</h3>
+                  </div>
+                  <div className={classes.details}>
+                    <p>VAT (20%)</p>
+                    <h3>$100.00</h3>
+                  </div>
+                  <br />
+                </div>
+                <div className={classes.summary}>
+                  <div className={classes.leftcircle}></div>
+                  <div className={classes.rightcircle}></div>
+                  <br />
+                  <p className={classes.title}>You have to pay</p>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <p className={classes.amount}>
+                      549.<small>99</small>
+                      <small>USD</small>
+                    </p>
+                    <img src={scroll} alt="" />
                   </div>
                 </div>
               </div>

@@ -2,14 +2,14 @@
   background: #fff;
   width: 80%;
   border-radius: 2px;
-  padding: 3em;
+  padding: 5em 3em;
   font-family: "Montserrat";
   color: #1a2f6c;
 }
 .paymentWrapper {
   display: flex;
-  /* padding: 0.5em; */
   gap: 3em;
+  padding: 2em 1em;
 }
 
 .paymentWrapper .leftContainer {
@@ -117,7 +117,8 @@
 }
 
 .paymentWrapper .card_details .cardInput img,
-.paymentWrapper .mastercard_container .content .card_dets img {
+.paymentWrapper .mastercard_container .content .card_dets img,
+.paymentWrapper .rightContainer .paymentInfo img {
   max-width: 100%;
   width: 30px;
 }
@@ -195,15 +196,23 @@
 
 .paymentWrapper .rightContainer .mainWrapper {
   position: relative;
+  height: 100%;
 }
 .paymentWrapper .rightContainer .mainWrapper .hoverContainer {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  transform: translate(-50%);
   background: rgba(255, 255, 255, 0.74);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   border: 1px solid rgba(255, 255, 255, 0.49);
-  padding: 2em 0;
+  padding-top: 2em;
+  /* padding-bottom: em; */
+  width: 70%;
+
   z-index: 2;
 }
 .paymentWrapper .rightContainer .mainWrapper .blueDiv {
@@ -218,8 +227,8 @@
 }
 
 .paymentWrapper .rightContainer .mastercard_container {
-  width: 60%;
-  height: 300px;
+  width: 80%;
+  min-height: 250px;
   margin: auto auto;
   display: flex;
   flex-direction: column;
@@ -228,6 +237,7 @@
 .paymentWrapper .rightContainer .mastercard_container .imageDiv {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .paymentWrapper .rightContainer .mastercard_container img:nth-child(1) {
   max-width: 100%;
@@ -243,6 +253,9 @@
 
 .paymentWrapper .rightContainer .mastercard_container .content .dots {
   font-size: 3em;
+}
+.paymentWrapper .rightContainer .paymentInfo .content {
+  border-bottom: 2px dashed #ccc;
 }
 .paymentWrapper .rightContainer .mastercard_container .content .card_no {
   display: flex;
@@ -269,4 +282,270 @@
 
 .paymentWrapper .rightContainer .mastercard_container .content .card_dets p {
   font-weight: 500;
+}
+
+.paymentWrapper .rightContainer .paymentInfo {
+  background-color: #e8ecef;
+  padding: 1em 2em;
+  border-radius: 10px;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+.paymentWrapper .rightContainer .paymentInfo .summary {
+  position: relative;
+}
+
+.paymentWrapper .rightContainer .paymentInfo .content .details {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0;
+}
+.paymentWrapper .rightContainer .paymentInfo .content .details h3 {
+  font-size: 1em;
+  font-weight: 600;
+}
+.paymentWrapper .rightContainer .paymentInfo .details p {
+  font-size: 1em;
+  color: #949db1;
+}
+.paymentWrapper .rightContainer .paymentInfo .leftcircle,
+.paymentWrapper .rightContainer .paymentInfo .rightcircle {
+  position: absolute;
+  width: 30px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+}
+.paymentWrapper .rightContainer .paymentInfo .leftcircle {
+  left: -15%;
+  top: -25%;
+}
+.paymentWrapper .rightContainer .paymentInfo .rightcircle {
+  /* right: 2%; */
+  top: -25%;
+  right: -15%;
+}
+
+.paymentWrapper .rightContainer .paymentInfo .summary .title {
+  font-size: 1em;
+  color: #949db1;
+  padding: 0.5em 0;
+}
+.paymentWrapper .rightContainer .paymentInfo .summary .amount {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.paymentWrapper .rightContainer .paymentInfo .summary .amount small {
+  font-weight: 400;
+  font-size: 0.6em;
+  padding: 0 3px;
+}
+.paymentWrapper
+  .rightContainer
+  .paymentInfo
+  .summary
+  .amount
+  small:nth-child(2) {
+  font-weight: 400;
+  font-size: 0.6em;
+  color: #7a7d83;
+}
+
+/* mobile screens */
+@media only screen and (max-width: 600px) {
+  .paymentContainer {
+    margin: 2em 0;
+    width: 90%;
+    padding: 1em;
+  }
+  .paymentWrapper {
+    gap: 2em;
+    flex-direction: column;
+  }
+
+  .paymentWrapper .leftContainer {
+    flex: 1;
+    order: 2;
+  }
+  .paymentWrapper .rightContainer {
+    flex: 1;
+    order: 1;
+  }
+
+  .squareBackground {
+    background-color: #1a2f6c;
+    padding: 8px 6px;
+    border-radius: 3px;
+  }
+
+  .paymentWrapper .leftContainer .logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+  }
+
+  .paymentWrapper .leftContainer .header {
+    margin-bottom: 2em;
+  }
+  .paymentWrapper .leftContainer .header .timer {
+    gap: 3px;
+  }
+
+  .paymentWrapper .leftContainer .title > h2 {
+    font-size: 1em;
+  }
+
+  .paymentWrapper .card_details h3 {
+    font-size: 0.8em;
+    margin-bottom: 8px;
+  }
+  .paymentWrapper .card_details p {
+    font-size: 0.6em;
+    margin-bottom: 12px;
+  }
+  .paymentWrapper .card_details .edit {
+    width: 10px;
+    height: 15px;
+  }
+  /* card Input field */
+  .paymentWrapper .card_details .cardInput {
+    margin-bottom: 1em;
+  }
+
+  .paymentWrapper .card_details input {
+    height: 2em;
+    padding: 1em 3em;
+    padding-right: 2em;
+    font-size: 1em;
+  }
+
+  .paymentWrapper .card_details .cardInput .master_logo {
+    top: 25%;
+    width: 15px;
+  }
+
+  /* .paymentWrapper .card_details .cardInput img,
+  .paymentWrapper .mastercard_container .content .card_dets img,
+  .paymentWrapper .rightContainer .paymentInfo img {
+    max-width: 100%;
+    width: 30px;
+  } */
+
+  /* cvv */
+  .paymentWrapper .card_details .cvv {
+    margin-bottom: 1em;
+  }
+  .paymentWrapper .card_details .cvv img,
+  .paymentWrapper .card_details .password .passwordInput img {
+    right: 2%;
+    top: 15%;
+  }
+
+  .paymentWrapper .card_details .expiry_content {
+    margin-bottom: 1em;
+  }
+
+  .paymentWrapper .card_details .expiry_content .expiry {
+    gap: 0.5em;
+  }
+  .paymentWrapper .card_details .expiry_content .expiry input {
+    padding: 0 0.7em;
+  }
+
+  /* password */
+  .paymentWrapper .card_details .password {
+    margin-bottom: 1em;
+  }
+
+  .paynowBtn {
+    font-size: 0.8em;
+  }
+
+  .paymentWrapper .rightContainer .mainWrapper {
+    position: relative;
+    height: 100%;
+  }
+  .paymentWrapper .rightContainer .mainWrapper .hoverContainer {
+    position: relative;
+    width: 80%;
+    margin-bottom: -5em;
+  }
+  .paymentWrapper .rightContainer .mainWrapper .blueDiv {
+    height: 30px;
+    width: 60px;
+  }
+
+  .paymentWrapper .rightContainer .mastercard_container {
+    width: 70%;
+    min-height: 150px;
+  }
+  .paymentWrapper .rightContainer .mastercard_container img:nth-child(1) {
+    width: 30px;
+    height: 40px;
+  }
+
+  .paymentWrapper .rightContainer .mastercard_container img:nth-child(2) {
+    width: 20px;
+    height: 20px;
+  }
+
+  .paymentWrapper .rightContainer .mastercard_container .content .name {
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
+  .paymentWrapper .rightContainer .mastercard_container .content .dots {
+    font-size: 2em;
+  }
+  .paymentWrapper .rightContainer .mastercard_container .content .card_no {
+    gap: 5px;
+  }
+  .paymentWrapper
+    .rightContainer
+    .mastercard_container
+    .content
+    .card_no
+    p:nth-child(2) {
+    margin-bottom: -1.2em;
+    font-size: 1em;
+  }
+
+  .paymentWrapper .rightContainer .mastercard_container .content .card_dets {
+    margin: 0.5em 0;
+  }
+  .paymentWrapper .rightContainer .paymentInfo {
+    padding-top: 5em;
+    position: relative;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .content .details h3 {
+    font-size: 0.8em;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .details p {
+    font-size: 0.8em;
+  }
+  /* .paymentWrapper .rightContainer .paymentInfo .leftcircle,
+  .paymentWrapper .rightContainer .paymentInfo .rightcircle {
+    position: absolute;
+    width: 30px;
+    height: 35px;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .leftcircle {
+    left: -15%;
+    top: -25%;
+  } */
+  /* .paymentWrapper .rightContainer .paymentInfo .rightcircle {
+    top: -25%;
+    right: -15%;
+  } */
+
+  .paymentWrapper .rightContainer .paymentInfo .summary .title {
+    font-size: 0.8em;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .summary .amount {
+    font-size: 1.3em;
+  }
 }
