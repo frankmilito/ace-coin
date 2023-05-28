@@ -2,7 +2,7 @@ import "./App.css";
 import Payment from "./pages/payment/Payment";
 import { useState } from "react";
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="App">
