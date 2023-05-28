@@ -1,0 +1,70 @@
+.paymentContainer {
+  background: #fff;
+  width: 80%;
+  border-radius: 2px;
+  padding: 1em;
+}
+.paymentWrapper {
+  display: flex;
+  padding: 1em;
+  gap: 3em;
+}
+
+.paymentWrapper .leftContainer {
+  flex: 2;
+}
+.paymentWrapper .rightContainer {
+  flex: 1;
+}
+
+.squareBackground {
+  background-color: #1e3a8a;
+  padding: 12px 8px;
+  border-radius: 5px;
+}
+
+.paymentWrapper .leftContainer .logo {
+  max-width: 100%;
+  width: 30px;
+  height: 30px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.paymentWrapper .leftContainer .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.paymentWrapper .leftContainer .header .timer {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 5px;
+}
+
+.paymentWrapper .leftContainer .title {
+  display: flex;
+  align-items: center;
+}
+.paymentWrapper .leftContainer .title > h2 {
+  color: #1e3a8a;
+  font-weight: 500;
+}
+.paymentWrapper .leftContainer .title > .subtitle {
+  font-weight: 300 !important;
+  color: #1e3a8a;
+}
+
+.paymentWrapper .card_details .card_number {
+  display: flex;
+  justify-content: space-between;
+}
+.paymentWrapper .card_details h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
