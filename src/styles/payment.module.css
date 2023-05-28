@@ -21,7 +21,7 @@
 
 .squareBackground {
   background-color: #1a2f6c;
-  padding: 12px 8px;
+  padding: 12px;
   border-radius: 5px;
 }
 
@@ -100,6 +100,9 @@
   font-size: 1.2em;
   font-weight: 500;
 }
+.paymentWrapper .card_details input:focus {
+  outline: 2px solid#156bff;
+}
 .paymentWrapper .card_details .cardInput .master_icon,
 .paymentWrapper .card_details .cardInput .master_logo {
   position: absolute;
@@ -135,11 +138,11 @@
   flex: 1;
 }
 .paymentWrapper .card_details .cvv .cvvInput,
-.paymentWrapper .card_details .password .passwordInput {
+.paymentWrapper .card_details .password .cvvInput {
   position: relative;
 }
 .paymentWrapper .card_details .cvv img,
-.paymentWrapper .card_details .password .passwordInput img {
+.paymentWrapper .card_details .password .cvvInput img {
   max-width: 100%;
   width: 20px;
   position: absolute;
@@ -294,6 +297,9 @@
   width: 100%;
   display: flex;
   align-items: end;
+  min-width: 400px;
+  /* background-color: red; */
+  overflow: hidden;
 }
 .paymentWrapper .rightContainer .paymentInfo .summary {
   position: relative;
@@ -321,13 +327,13 @@
   border-radius: 50%;
 }
 .paymentWrapper .rightContainer .paymentInfo .leftcircle {
-  left: -15%;
+  left: -14%;
   top: -25%;
 }
 .paymentWrapper .rightContainer .paymentInfo .rightcircle {
   /* right: 2%; */
   top: -25%;
-  right: -15%;
+  right: -14%;
 }
 
 .paymentWrapper .rightContainer .paymentInfo .summary .title {
@@ -378,9 +384,9 @@
   }
 
   .squareBackground {
-    background-color: #1a2f6c;
-    padding: 8px 6px;
+    padding: 8px;
     border-radius: 3px;
+    margin-right: 3px;
   }
 
   .paymentWrapper .leftContainer .logo {
@@ -441,7 +447,7 @@
     margin-bottom: 1em;
   }
   .paymentWrapper .card_details .cvv img,
-  .paymentWrapper .card_details .password .passwordInput img {
+  .paymentWrapper .card_details .password .cvvInput img {
     right: 2%;
     top: 15%;
   }
@@ -520,6 +526,7 @@
   .paymentWrapper .rightContainer .paymentInfo {
     padding-top: 5em;
     position: relative;
+    min-width: 100%;
   }
   .paymentWrapper .rightContainer .paymentInfo .content .details h3 {
     font-size: 0.8em;
@@ -527,20 +534,19 @@
   .paymentWrapper .rightContainer .paymentInfo .details p {
     font-size: 0.8em;
   }
-  /* .paymentWrapper .rightContainer .paymentInfo .leftcircle,
+  .paymentWrapper .rightContainer .paymentInfo .leftcircle,
   .paymentWrapper .rightContainer .paymentInfo .rightcircle {
-    position: absolute;
     width: 30px;
     height: 35px;
   }
   .paymentWrapper .rightContainer .paymentInfo .leftcircle {
-    left: -15%;
+    left: -20%;
     top: -25%;
-  } */
-  /* .paymentWrapper .rightContainer .paymentInfo .rightcircle {
+  }
+  .paymentWrapper .rightContainer .paymentInfo .rightcircle {
     top: -25%;
-    right: -15%;
-  } */
+    right: -20%;
+  }
 
   .paymentWrapper .rightContainer .paymentInfo .summary .title {
     font-size: 0.8em;

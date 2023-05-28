@@ -1,14 +1,22 @@
-import classes from "./payment.module.css";
+import { useState } from "react";
+import classes from "../../styles/payment.module.css";
 import logo from "../../assets/bank-card.png";
 import edit from "../../assets/edit_icon.svg";
-import master_card_icon from "../../assets/mastercard_icon.svg";
 import master_card_logo from "../../assets/mastercard_logo.svg";
-import verified from "../../assets/verified_icon.svg";
 import dotted from "../../assets/dots.svg";
 import chipset from "../../assets/chip.png";
 import wifi_img from "../../assets/wifi.png";
 import scroll from "../../assets/ancient-scroll.png";
+import MasterCard from "../../components/MasterCard";
+import CardInput from "../../components/CardInput";
+
 const Payment = () => {
+  const [expiryMonth, setExpiryMonth] = useState("09");
+  const [expiryYear, setExpiryYear] = useState("22");
+  const [cvv, setCvv] = useState("327");
+  const [password, setPassword] = useState("testing");
+  const [isEdit, setisEdit] = useState(true);
+
   return (
     <main className={classes.paymentContainer}>
       <div className={classes.paymentWrapper}>
@@ -39,42 +47,24 @@ const Payment = () => {
                   alignItems: "center",
                   cursor: "pointer",
                 }}
+                onClick={() => setisEdit(!isEdit)}
               >
                 <img src={edit} alt="edit icon" className={classes.edit} />
                 <h5>Edit</h5>
               </div>
             </div>
-            <div className={classes.cardInput}>
-              <img
-                src={master_card_icon}
-                alt="master_icon"
-                className={classes.master_icon}
-              />
-              <input
-                type="text"
-                className={classes.input}
-                placeholder="0000 - 1111 - 2222 - 3333"
-                disabled={true}
-              />
-              <img
-                src={verified}
-                alt="master_logo"
-                className={classes.master_logo}
-              />
-            </div>
+            <MasterCard isEdit={isEdit} />
             <div className={classes.cvv}>
               <div>
                 <h3>CVV Number</h3>
                 <p>Enter the 3 or 4 digit card number on the card</p>
               </div>
-              <div className={classes.cvvInput}>
-                <input
-                  type="text"
-                  className={classes.input}
-                  placeholder="003"
-                />
-                <img src={dotted} alt="" />
-              </div>
+              <CardInput
+                image={dotted}
+                value={cvv}
+                handleChange={(e) => setCvv(e.target.value)}
+                maxLength={4}
+              />
             </div>
             <div className={classes.expiry_content}>
               <div className={classes.expirt_details}>
@@ -82,16 +72,14 @@ const Payment = () => {
                 <p>Enter the expiration date of the card</p>
               </div>
               <div className={classes.expiry}>
-                <input
-                  type="text"
-                  className={classes.input}
-                  placeholder="000"
+                <CardInput
+                  value={expiryMonth}
+                  handleChange={(e) => setExpiryMonth(e.target.value)}
                 />
                 <div>/</div>
-                <input
-                  type="text"
-                  className={classes.input}
-                  placeholder="344"
+                <CardInput
+                  value={expiryYear}
+                  handleChange={(e) => setExpiryYear(e.target.value)}
                 />
               </div>
             </div>
@@ -100,14 +88,12 @@ const Payment = () => {
                 <h3>Password</h3>
                 <p>Enter your dynamic password</p>
               </div>
-              <div className={classes.passwordInput}>
-                <input
-                  type="password"
-                  className={classes.input}
-                  value={"hellowork"}
-                />
-                <img src={dotted} alt="" />
-              </div>
+              <CardInput
+                image={dotted}
+                value={password}
+                handleChange={(e) => setPassword(e.target.value)}
+                type="password"
+              />
             </div>
             <button className={classes.paynowBtn}>Pay Now</button>
           </div>
