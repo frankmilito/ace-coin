@@ -29,15 +29,17 @@
 
 .paymentWrapper .leftContainer .logo {
   max-width: 100%;
-  width: 30px;
-  height: 30px;
-  background: blue;
+  background: #156bff;
   color: white;
   padding: 10px;
   border-radius: 50%;
   margin-right: 5px;
 }
 
+.paymentWrapper .leftContainer .logo img {
+  width: 25px;
+  height: 25px;
+}
 .paymentWrapper .leftContainer .header {
   display: flex;
   align-items: center;
@@ -402,6 +404,7 @@
   .paymentWrapper {
     gap: 2em;
     flex-direction: column;
+    padding: 2em 0;
   }
 
   .paymentWrapper .leftContainer {
@@ -421,16 +424,18 @@
   }
 
   .paymentWrapper .leftContainer .logo {
-    width: 20px;
-    height: 20px;
-    margin-right: 3px;
+    padding: 8px;
+  }
+  .paymentWrapper .leftContainer .logo img {
+    width: 15px;
+    height: 15px;
   }
 
   .paymentWrapper .leftContainer .header {
     margin-bottom: 2em;
   }
   .paymentWrapper .leftContainer .header .timer {
-    gap: 3px;
+    gap: 2px;
   }
 
   .paymentWrapper .leftContainer .title > h2 {

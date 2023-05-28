@@ -1,6 +1,6 @@
 import { useState } from "react";
 import classes from "../../styles/payment.module.css";
-import logo from "../../assets/bank-card.png";
+import logo from "../../assets/credit-card.png";
 import edit from "../../assets/edit_icon.svg";
 import dotted from "../../assets/dots.svg";
 import MasterCard from "../../components/MasterCard";
@@ -25,7 +25,9 @@ const Payment = ({ handleOpen }) => {
         <section className={classes.leftContainer}>
           <div className={classes.header}>
             <div className={classes.title}>
-              <img src={logo} alt="logo" className={classes.logo} />
+              <div className={classes.logo}>
+                <img src={logo} alt="logo" />
+              </div>
               <h2>AceCoin</h2>
               <h2 className={classes.subtitle}>Pay</h2>
             </div>
