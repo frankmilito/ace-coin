@@ -9,15 +9,18 @@ import Timer from "../../components/Timer";
 import CardDetails from "../../components/CardDetails";
 import PaymentInfo from "../../components/PaymentInfo";
 
-const Payment = () => {
+const Payment = ({ handleOpen }) => {
   const [expiryMonth, setExpiryMonth] = useState("09");
   const [expiryYear, setExpiryYear] = useState("22");
   const [cvv, setCvv] = useState("327");
   const [password, setPassword] = useState("testing");
+  const [cardNumber, setCardNumber] = useState("2412751234123456");
   const [isEdit, setisEdit] = useState(true);
-
   return (
     <main className={classes.paymentContainer}>
+      <button className={classes.closeBtn} onClick={() => handleOpen()}>
+        x
+      </button>
       <div className={classes.paymentWrapper}>
         <section className={classes.leftContainer}>
           <div className={classes.header}>
@@ -26,7 +29,7 @@ const Payment = () => {
               <h2>AceCoin</h2>
               <h2 className={classes.subtitle}>Pay</h2>
             </div>
-            <Timer />
+            <Timer handleOpen={handleOpen} />
           </div>
           <div className={classes.card_details}>
             <div className={classes.card_number}>
@@ -46,7 +49,13 @@ const Payment = () => {
                 <h5>Edit</h5>
               </div>
             </div>
-            <MasterCard isEdit={isEdit} />
+            <MasterCard
+              isEdit={isEdit}
+              value={cardNumber}
+              handleChange={(e) => {
+                setCardNumber(e.target.value);
+              }}
+            />
             <div className={classes.cvv}>
               <div>
                 <h3>CVV Number</h3>
@@ -94,7 +103,7 @@ const Payment = () => {
         <section className={classes.rightContainer}>
           <div className={classes.mainWrapper}>
             <div className={classes.blueDiv}></div>
-            <CardDetails />
+            <CardDetails expiryMonth={expiryMonth} expiryYear={expiryYear} />
             <PaymentInfo />
           </div>
         </section>

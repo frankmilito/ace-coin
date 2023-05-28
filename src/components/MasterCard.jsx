@@ -2,8 +2,7 @@ import classes from "../styles/payment.module.css";
 import master_card_icon from "../assets/mastercard_icon.svg";
 import verified from "../assets/verified_icon.svg";
 import { useState } from "react";
-const MasterCard = ({ isEdit }) => {
-  const [cardNumber, setCardNumber] = useState("2412751234123456");
+const MasterCard = ({ isEdit, value, handleChange }) => {
   const formatCard = (val) => {
     const formattedVal = val.replaceAll(" - ", "");
     // console.log(formattedVal?.match(/.{1,4}/g)?.join(" - ") || "");
@@ -20,8 +19,8 @@ const MasterCard = ({ isEdit }) => {
         type="text"
         className={classes.input}
         disabled={isEdit}
-        value={formatCard(cardNumber)}
-        onChange={(e) => setCardNumber(e.target.value)}
+        value={formatCard(value)}
+        onChange={handleChange}
         maxLength={25}
       />
       <img src={verified} alt="master_logo" className={classes.master_logo} />

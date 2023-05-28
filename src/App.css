@@ -17,3 +17,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.App .btn {
+  border: none;
+  padding: 1em;
+  font-size: 1.5em;
+  border-radius: 5px;
+  color: #156bff;
+  background-color: aliceblue;
+}

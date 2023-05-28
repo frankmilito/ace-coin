@@ -5,6 +5,7 @@
   padding: 5em 3em;
   font-family: "Montserrat";
   color: #1a2f6c;
+  position: relative;
 }
 .paymentWrapper {
   display: flex;
@@ -195,8 +196,12 @@
   border-radius: 10px;
   font-weight: 500;
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
+.paynowBtn:hover {
+  transform: scale(0.99);
+}
 .paymentWrapper .rightContainer .mainWrapper {
   position: relative;
   height: 100%;
@@ -297,13 +302,13 @@
   width: 100%;
   display: flex;
   align-items: end;
-  min-width: 400px;
+  /* min-width: 400px; */
   /* background-color: red; */
   overflow: hidden;
 }
-.paymentWrapper .rightContainer .paymentInfo .summary {
+/* .paymentWrapper .rightContainer .paymentInfo .summary {
   position: relative;
-}
+} */
 
 .paymentWrapper .rightContainer .paymentInfo .content .details {
   display: flex;
@@ -327,13 +332,13 @@
   border-radius: 50%;
 }
 .paymentWrapper .rightContainer .paymentInfo .leftcircle {
-  left: -14%;
-  top: -25%;
+  left: -5%;
+  bottom: 16%;
 }
 .paymentWrapper .rightContainer .paymentInfo .rightcircle {
   /* right: 2%; */
-  top: -25%;
-  right: -14%;
+  bottom: 16%;
+  right: -5%;
 }
 
 .paymentWrapper .rightContainer .paymentInfo .summary .title {
@@ -362,7 +367,20 @@
   color: #7a7d83;
 }
 
-/* mobile screens */
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.closeBtn:hover {
+  font-size: 1em;
+}
+
+/* mobile screens with max widths of 600px */
 @media only screen and (max-width: 600px) {
   .paymentContainer {
     margin: 2em 0;
@@ -540,12 +558,13 @@
     height: 35px;
   }
   .paymentWrapper .rightContainer .paymentInfo .leftcircle {
-    left: -20%;
-    top: -25%;
+    left: -5%;
+    bottom: 20%;
   }
   .paymentWrapper .rightContainer .paymentInfo .rightcircle {
-    top: -25%;
-    right: -20%;
+    /* right: 2%; */
+    bottom: 20%;
+    right: -5%;
   }
 
   .paymentWrapper .rightContainer .paymentInfo .summary .title {
@@ -555,3 +574,36 @@
     font-size: 1.3em;
   }
 }
+
+/* @media only screen and (max-width: 900px) {
+  .paymentWrapper .rightContainer .paymentInfo {
+    padding-top: 5em;
+    position: relative;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .content .details h3 {
+    font-size: 0.8em;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .details p {
+    font-size: 0.8em;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .leftcircle,
+  .paymentWrapper .rightContainer .paymentInfo .rightcircle {
+    width: 30px;
+    height: 35px;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .leftcircle {
+    left: -5%;
+    bottom: 16%;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .rightcircle {
+    bottom: 16%;
+    right: -5%;
+  }
+
+  .paymentWrapper .rightContainer .paymentInfo .summary .title {
+    font-size: 0.8em;
+  }
+  .paymentWrapper .rightContainer .paymentInfo .summary .amount {
+    font-size: 1.3em;
+  }
+} */
