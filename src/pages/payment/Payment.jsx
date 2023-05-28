@@ -1,5 +1,9 @@
 import classes from "./payment.module.css";
 import logo from "../../assets/bank-card.png";
+import edit from "../../assets/edit_icon.svg";
+import master_card_icon from "../../assets/mastercard_icon.svg";
+import master_card_logo from "../../assets/verified_icon.svg";
+import dotted from "../../assets/dots.svg";
 const Payment = () => {
   return (
     <main className={classes.paymentContainer}>
@@ -25,15 +29,33 @@ const Payment = () => {
                 <h3>Card Number</h3>
                 <p>Enter the 16-digit card number on the card</p>
               </div>
-              <div>
-                <img src="" alt="edit icon" /> <small>Edit</small>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <img src={edit} alt="edit icon" className={classes.edit} />
+                <h5>Edit</h5>
               </div>
             </div>
             <div className={classes.cardInput}>
+              <img
+                src={master_card_icon}
+                alt="master_icon"
+                className={classes.master_icon}
+              />
               <input
                 type="text"
                 className={classes.input}
                 placeholder="0000 - 1111 - 2222 - 3333"
+                disabled={true}
+              />
+              <img
+                src={master_card_logo}
+                alt="master_logo"
+                className={classes.master_logo}
               />
             </div>
             <div className={classes.cvv}>
@@ -47,6 +69,7 @@ const Payment = () => {
                   className={classes.input}
                   placeholder="0000 - 1111 - 2222 - 3333"
                 />
+                <img src={dotted} alt="" />
               </div>
             </div>
             <div className={classes.expiry}>
@@ -75,7 +98,7 @@ const Payment = () => {
                 />
               </div>
             </div>
-            <input type="text" className={classes.paynowBtn} />
+            <button className={classes.paynowBtn}>Pay Now</button>
           </div>
         </section>
         <section className={classes.rightContainer}>

@@ -3,6 +3,8 @@
   width: 80%;
   border-radius: 2px;
   padding: 1em;
+  font-family: "Montserrat";
+  color: #1a2f6c;
 }
 .paymentWrapper {
   display: flex;
@@ -18,7 +20,7 @@
 }
 
 .squareBackground {
-  background-color: #1e3a8a;
+  background-color: #1a2f6c;
   padding: 12px 8px;
   border-radius: 5px;
 }
@@ -63,8 +65,76 @@
 .paymentWrapper .card_details .card_number {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .paymentWrapper .card_details h3 {
   font-size: 1.2em;
   font-weight: 500;
+  margin-bottom: 10px;
+}
+.paymentWrapper .card_details p {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.paymentWrapper .card_details .edit {
+  max-width: 100%;
+  width: 15px;
+  height: 20px;
+  margin-right: 5px;
+}
+/* card Input field */
+.paymentWrapper .card_details .cardInput {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.paymentWrapper .card_details input {
+  max-width: 100%;
+  width: 100%;
+  height: 3em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0 5em;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.paymentWrapper .card_details .cardInput .master_icon,
+.paymentWrapper .card_details .cardInput .master_logo {
+  position: absolute;
+}
+.paymentWrapper .card_details .cardInput .master_icon {
+  left: 2%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.paymentWrapper .card_details .cardInput .master_logo {
+  right: 2%;
+  top: 30%;
+  transform: translate(-50%, 0);
+  width: 20px;
+}
+
+.paymentWrapper .card_details .cardInput img {
+  max-width: 100%;
+  width: 30px;
+}
+
+/* cvv */
+.paymentWrapper .card_details .cvv {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.paymentWrapper .card_details .cvv .cvvInput {
+  position: relative;
+}
+.paymentWrapper .card_details .cvv img {
+  max-width: 100%;
+  width: 20px;
+  position: absolute;
+  right: 4%;
+  top: 30%;
+  transform: translate(-50%, 0);
 }
