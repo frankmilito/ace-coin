@@ -2,13 +2,13 @@
   background: #fff;
   width: 80%;
   border-radius: 2px;
-  padding: 1em;
+  padding: 3em;
   font-family: "Montserrat";
   color: #1a2f6c;
 }
 .paymentWrapper {
   display: flex;
-  padding: 1em;
+  /* padding: 0.5em; */
   gap: 3em;
 }
 
@@ -116,7 +116,8 @@
   width: 20px;
 }
 
-.paymentWrapper .card_details .cardInput img {
+.paymentWrapper .card_details .cardInput img,
+.paymentWrapper .mastercard_container .content .card_dets img {
   max-width: 100%;
   width: 30px;
 }
@@ -125,16 +126,147 @@
 .paymentWrapper .card_details .cvv {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2em;
 }
+.paymentWrapper .card_details .cvv > div,
 .paymentWrapper .card_details .cvv .cvvInput {
+  flex: 1;
+}
+.paymentWrapper .card_details .cvv .cvvInput,
+.paymentWrapper .card_details .password .passwordInput {
   position: relative;
 }
-.paymentWrapper .card_details .cvv img {
+.paymentWrapper .card_details .cvv img,
+.paymentWrapper .card_details .password .passwordInput img {
   max-width: 100%;
   width: 20px;
   position: absolute;
   right: 4%;
   top: 30%;
   transform: translate(-50%, 0);
+}
+
+.paymentWrapper .card_details .expiry_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2em;
+}
+.paymentWrapper .card_details .expiry_content .expiry_details {
+  flex: 1;
+}
+.paymentWrapper .card_details .expiry_content .expiry {
+  display: flex;
+  gap: 0.7em;
+  align-items: center;
+}
+.paymentWrapper .card_details .expiry_content .expiry input {
+  padding: 0 1em;
+  text-align: center;
+}
+
+/* password */
+.paymentWrapper .card_details .password {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.paymentWrapper .card_details .password > div,
+.paymentWrapper .card_details .password .passwordInput {
+  flex: 1;
+}
+
+.paymentWrapper .card_details .password input {
+  padding: 0 1em;
+  /* text-align: center; */
+}
+
+.paynowBtn {
+  width: 100%;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  background-image: linear-gradient(to right, #2676fe, #156bff);
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.paymentWrapper .rightContainer .mainWrapper {
+  position: relative;
+}
+.paymentWrapper .rightContainer .mainWrapper .hoverContainer {
+  background: rgba(255, 255, 255, 0.74);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.49);
+  padding: 2em 0;
+  z-index: 2;
+}
+.paymentWrapper .rightContainer .mainWrapper .blueDiv {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 80px;
+  border-radius: 0 0 150px 150px;
+  background: #2676fe;
+}
+
+.paymentWrapper .rightContainer .mastercard_container {
+  width: 60%;
+  height: 300px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.paymentWrapper .rightContainer .mastercard_container .imageDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.paymentWrapper .rightContainer .mastercard_container img:nth-child(1) {
+  max-width: 100%;
+  width: 40px;
+  height: 50px;
+}
+
+.paymentWrapper .rightContainer .mastercard_container img:nth-child(2) {
+  max-width: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.paymentWrapper .rightContainer .mastercard_container .content .dots {
+  font-size: 3em;
+}
+.paymentWrapper .rightContainer .mastercard_container .content .card_no {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.paymentWrapper
+  .rightContainer
+  .mastercard_container
+  .content
+  .card_no
+  p:nth-child(2) {
+  margin-bottom: -1.5em;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.paymentWrapper .rightContainer .mastercard_container .content .card_dets {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin: 1em 0;
+}
+
+.paymentWrapper .rightContainer .mastercard_container .content .card_dets p {
+  font-weight: 500;
 }

@@ -2,8 +2,11 @@ import classes from "./payment.module.css";
 import logo from "../../assets/bank-card.png";
 import edit from "../../assets/edit_icon.svg";
 import master_card_icon from "../../assets/mastercard_icon.svg";
-import master_card_logo from "../../assets/verified_icon.svg";
+import master_card_logo from "../../assets/mastercard_logo.svg";
+import verified from "../../assets/verified_icon.svg";
 import dotted from "../../assets/dots.svg";
+import chipset from "../../assets/chip.png";
+import wifi_img from "../../assets/wifi.png";
 const Payment = () => {
   return (
     <main className={classes.paymentContainer}>
@@ -53,7 +56,7 @@ const Payment = () => {
                 disabled={true}
               />
               <img
-                src={master_card_logo}
+                src={verified}
                 alt="master_logo"
                 className={classes.master_logo}
               />
@@ -72,8 +75,8 @@ const Payment = () => {
                 <img src={dotted} alt="" />
               </div>
             </div>
-            <div className={classes.expiry}>
-              <div>
+            <div className={classes.expiry_content}>
+              <div className={classes.expirt_details}>
                 <h3>Expiry Date</h3>
                 <p>Enter the expiration date of the card</p>
               </div>
@@ -81,7 +84,13 @@ const Payment = () => {
                 <input
                   type="text"
                   className={classes.input}
-                  placeholder="0000 - 1111 - 2222 - 3333"
+                  placeholder="000"
+                />
+                <div>/</div>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="344"
                 />
               </div>
             </div>
@@ -90,19 +99,40 @@ const Payment = () => {
                 <h3>Password</h3>
                 <p>Enter your dynamic password</p>
               </div>
-              <div className={classes.passwird}>
+              <div className={classes.passwordInput}>
                 <input
-                  type="text"
+                  type="password"
                   className={classes.input}
-                  placeholder="0000 - 1111 - 2222 - 3333"
+                  value={"hellowork"}
                 />
+                <img src={dotted} alt="" />
               </div>
             </div>
             <button className={classes.paynowBtn}>Pay Now</button>
           </div>
         </section>
         <section className={classes.rightContainer}>
-          <h1>RIght content</h1>
+          <div className={classes.mainWrapper}>
+            <div className={classes.blueDiv}></div>
+            <div className={classes.hoverContainer}>
+              <div className={classes.mastercard_container}>
+                <div className={classes.imageDiv}>
+                  <img src={chipset} alt="chipset" />
+                  <img src={wifi_img} alt="wifi" />
+                </div>
+                <div className={classes.content}>
+                  <p className={classes.name}>Jonathan Michael</p>
+                  <div className={classes.card_no}>
+                    <p className={classes.dots}>.....</p> <p>3456</p>
+                  </div>
+                  <div className={classes.card_dets}>
+                    <p>09/22</p>
+                    <img src={master_card_logo} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </main>
